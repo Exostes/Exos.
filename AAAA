@@ -53,7 +53,7 @@ function Module:CreateWindow(Url)
     Report.Position = UDim2.new(0.0331058241, 0, 0.146641776, 0)
     Report.Size = UDim2.new(0, 443, 0, 162)
     Report.Font = Enum.Font.JosefinSans
-    Report.Text = 'Put your report here weirdo :D'
+    Report.Text = '  '
     Report.TextColor3 = Color3.fromRGB(255, 255, 255)
     Report.TextSize = 15.000
     Report.TextStrokeTransparency = 0.500
@@ -86,7 +86,7 @@ function Module:CreateWindow(Url)
     ReportButton.TextSize = 22.000
     ReportButton.TextStrokeTransparency = 0.500
     ReportButton.TextWrapped = true
-    ReportButton.MouseButton1Down:connect(t)()
+    ReportButton.MouseButton1Down:connect(function()
         webhook(Url, 0xFF0000, 'Bug Report', Report.Text)
         wait(1)
         BugReporter:Destroy()
