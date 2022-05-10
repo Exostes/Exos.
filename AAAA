@@ -1,0 +1,24 @@
+local Module = {}
+
+-- Function 
+function webhook(hook, color, title, description)
+    pcall(function()
+        local Embed = {
+            color = color,
+            title = title,
+            description = description
+        };
+
+        (syn and syn.request or http_request) {
+            Url = hook,
+            Method = 'POST',
+            Headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            Body = game:GetService 'HttpService':JSONEncode({
+                content = Content,
+                embeds = {Embed}
+            })
+        };
+    end)
+end
